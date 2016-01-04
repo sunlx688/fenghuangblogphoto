@@ -3,11 +3,9 @@ __author__ = 'SUN'
 '''
     获取一页中的所有图片链接
 '''
-import os
-import re
+
 import requests
 from bs4 import BeautifulSoup
-from time import sleep
 
 
 class GetBlogPhotoLink:
@@ -32,10 +30,10 @@ class GetBlogPhotoLink:
         return photo_urls
 
 
-# url = 'http://blog.ifeng.com/article/42168009.html'
-#
-# photo = GetBlogPhotoLink(url)
-# print(photo.get_msgs())
-# print(type(photo.get_photo_urls()))
-# print(photo.get_photo_urls()[0])
-# print(type(photo.get_photo_urls()[0]))
+        # url = 'http://blog.ifeng.com/article/42168009.html'
+        #
+        # photo = GetBlogPhotoLink(url)
+        # print(photo.get_msgs())
+        # print(type(photo.get_photo_urls()))
+        # print(photo.get_photo_urls()[0])
+        # print(type(photo.get_photo_urls()[0]))

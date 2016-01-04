@@ -31,7 +31,7 @@ class SavePhotos:
                 print('保存本页中的第', x, '张图片')
                 self.save_one_photo('%s.jpg' % x, photo_url)
                 x += 1
-                sleep(1)
+                sleep(0.1)
         print('本页的图片已保存完成！')
 
 

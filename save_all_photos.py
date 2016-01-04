@@ -15,12 +15,14 @@ class SaveAllPhotos:
     def __init__(self, path, url):
         self.path = path
         self.url = url
+        self.i = 0
 
     # 保存所有页面的图片
     def save_all_photos(self):
         gabp = GetAllBlogPages(self.url)
-
-        for page_url in gabp.get_all_pages():
+        while self.i < len(gabp.get_all_pages()):
+            print('====================正在保存第', self.i + 1, '页=============================')
+            page_url = gabp.get_all_pages()[self.i]
             opbl = OnePageBlogLink(page_url)
             blog_page_urls = opbl.get_blog_page_urls()
             # 保存一个页面上的所有blog链接到的图片
@@ -31,3 +33,4 @@ class SaveAllPhotos:
                 Dir().ch_dir(new_path)
                 photo_urls = gbpl(blog_page_urls[blog_page_url_num]).get_photo_urls()
                 sp().save_one_page_photos(photo_urls)
+            self.i += 1

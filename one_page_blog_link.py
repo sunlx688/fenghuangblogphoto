@@ -55,5 +55,3 @@ class OnePageBlogLink:
 # link = OnePageBlogLink(url)
 # # print(link.get_msgs())
 # print(len(link.get_blog_page_urls()))
-# if len(link.get_blog_page_urls())==0:
-#     print('=========')
