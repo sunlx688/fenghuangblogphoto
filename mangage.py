@@ -7,12 +7,12 @@ __author__ = 'SUN'
 from save_all_photos import SaveAllPhotos as sap
 
 url = 'http://blog.ifeng.com/2675094-1.html'
-url_str = 'http://blog.ifeng.com/2675094-'
+# url_str = 'http://blog.ifeng.com/2675094-'
 path = 'G:\Code\img\原生泰\\blogpic'
 
 
 def run():
-    sap(path, url, url_str).save_all_photos()
+    sap(path, url).save_all_photos()
 
 
 # 运行函数

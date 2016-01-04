@@ -6,13 +6,11 @@ __author__ = 'SUN'
 import requests
 import re
 from bs4 import BeautifulSoup
-from one_page_blog_link import OnePageBlogLink
 
 
 class GetAllBlogPages:
-    def __init__(self, url_str,url):
-        self.url_str = url_str
-        self.url=url
+    def __init__(self, url):
+        self.url = url
 
     # 获取最大的页码
     def get_max_page_num(self):
@@ -26,9 +24,10 @@ class GetAllBlogPages:
     def get_all_pages(self):
         page_urls = []
         for page in range(1, self.get_max_page_num() + 1):
-            page_url = self.url_str + str(page) + '.html'
+            page_url = self.url.split('-')[0] + '-' + str(page) + '.html'
             page_urls.append(page_url)
         return page_urls
+
 
 # url = 'http://blog.ifeng.com/2675094-1.html'
 # url_str = 'http://blog.ifeng.com/2675094-'

@@ -12,17 +12,16 @@ from dir import Dir
 
 
 class SaveAllPhotos:
-    def __init__(self, path, url, url_str):
+    def __init__(self, path, url):
         self.path = path
         self.url = url
-        self.url_str = url_str
 
     # 保存所有页面的图片
     def save_all_photos(self):
-        gabp=GetAllBlogPages(self.url_str,self.url)
+        gabp = GetAllBlogPages(self.url)
 
         for page_url in gabp.get_all_pages():
-            opbl=OnePageBlogLink(page_url)
+            opbl = OnePageBlogLink(page_url)
             blog_page_urls = opbl.get_blog_page_urls()
             # 保存一个页面上的所有blog链接到的图片
             for blog_page_url_num in range(0, len(blog_page_urls)):
